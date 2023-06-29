@@ -3,11 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
-import { FooterComponent } from './footer/footer.component';
+
+import { HomeComponent } from './layout/home/home.component';
+
 import { FilterComponent } from './components/filter/filter.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,11 @@ import { ListItemComponent } from './components/list-item/list-item.component';
     HomeComponent,
     FooterComponent,
     FilterComponent,
-    ListItemComponent
+    ListItemComponent,
+    CarouselComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
