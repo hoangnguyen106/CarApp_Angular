@@ -15,7 +15,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#"
+        <a class="nav-link" routerLink="home"
           >Trang chủ <span class="sr-only">(current)</span></a
         >
       </li>
@@ -31,12 +31,18 @@
       </li>
     </ul>
     <div class="text-dark">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
-        Đăng nhập
-      </button>
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+      <div *ngIf="showLogout">
+        <button
+          class="btn btn-outline-light my-2 my-sm-0"
+          type="button"
+          (click)="logout()"
+        >
+          Đăng xuất
+        </button>
+      </div>
+      <!-- <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
         Đăng ký
-      </button>
+      </button> -->
     </div>
   </div>
 </nav>

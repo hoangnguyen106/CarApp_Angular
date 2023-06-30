@@ -11,7 +11,13 @@ import { ListItemComponent } from './components/list-item/list-item.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
-
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { FormsModule } from '@angular/forms';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VarifyEmailComponent } from './components/varify-email/varify-email.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,8 +27,17 @@ import { FooterComponent } from './layout/footer/footer.component';
     FilterComponent,
     ListItemComponent,
     CarouselComponent,
+    LoginComponent,
+    RegisterComponent,
+    ForgotPasswordComponent,
+    VarifyEmailComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
