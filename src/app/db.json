@@ -1,0 +1,11 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "name": "Lamboghini",
+      "description": "Perfect",
+      "price": "100000$",
+      "imageUrl": "https://tintucxeco.net/wp-content/uploads/2023/04/Lamborghini-Aventador.jpg"
+    }
+  ]
+}

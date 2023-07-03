@@ -1,1 +1,18 @@
-<p>list-item works!</p>
+<div class="contaniner">
+  <div class="row">
+    <div class="col-4" *ngFor="let car of cars">
+      <div class="card" style="width: 18rem">
+        <img [src]="car.imageUrl" class="card-img-top" alt="" />
+        <div class="card-body">
+          <h5 class="card-title">{{ car.name }}</h5>
+          <p class="card-text">Mô tả: {{ car.description }}</p>
+          <p>
+            Giá:
+            {{ car.price }}
+          </p>
+          <a href="#" class="btn btn-primary">Đặt Hàng</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
