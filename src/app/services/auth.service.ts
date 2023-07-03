@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+
+import {
+  GoogleAuthProvider,
+  GithubAuthProvider,
+  FacebookAuthProvider,
+} from '@angular/fire/auth';
 @Injectable({
   providedIn: 'root',
 })
@@ -76,6 +82,19 @@ export class AuthService {
       },
       (err: any) => {
         alert('Something went wrong. Not able to send mail to your email.');
+      }
+    );
+  }
+
+  // Đăng nhập bằng google
+  googleSignIn() {
+    return this.fireauth.signInWithPopup(new GoogleAuthProvider()).then(
+      (res) => {
+        this.router.navigate(['/home']);
+        localStorage.setItem('token', JSON.stringify(res.user?.uid));
+      },
+      (err) => {
+        alert(err.message);
       }
     );
   }
