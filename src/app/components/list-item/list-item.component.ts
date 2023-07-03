@@ -1,8 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/app/models/car';
-
-const data = 'http://localhost:3000/cars';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-list-item',
@@ -12,10 +10,10 @@ const data = 'http://localhost:3000/cars';
 export class ListItemComponent implements OnInit {
   cars: Car[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    this.http.get(data).subscribe((res: any) => {
+    this.dataService.getAllCar().subscribe((res: any) => {
       console.log(res);
       this.cars = res;
     });
